@@ -1,24 +1,27 @@
 <template>
   <div class="home">
-    home
+    <h1>Home</h1>
     <p>My name is {{ name }} and my age is {{ age }}</p>
     <button @click="handleClick">Click me</button>
+    <button @click="age++">Add 1 to age</button>
+    <input type="text" v-model="name">
   </div>
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
 
 
 export default {
   name: 'HomeView',
   setup() {
-    console.log('setup')
     
-    let name = 'mario'
-    let age = 30
+    const name = ref('mario')
+    const age = ref(30)
     
     const handleClick = () => {
-      console.log('you clicked me.')
+      name.value = 'George'
+      age.value = 29
     }
     
     return { name, age, handleClick }
