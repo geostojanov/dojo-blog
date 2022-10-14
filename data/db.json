@@ -19,6 +19,34 @@
         "webdev",
         "coding"
       ]
+    },
+    {
+      "title": "Da mucko",
+      "body": "Kjuti si samo na nikoj ne raspravi",
+      "tags": [
+        "da",
+        "mucko",
+        "jasno"
+      ],
+      "id": 3
+    },
+    {
+      "title": "kjuti si samo da",
+      "body": "na nikoj ne rasprav",
+      "tags": [
+        "da",
+        "jasno"
+      ],
+      "id": 4
+    },
+    {
+      "title": "kjuti si samo da",
+      "body": "da da mucko jasno",
+      "tags": [
+        "jasno",
+        "da"
+      ],
+      "id": 5
     }
   ]
 }
