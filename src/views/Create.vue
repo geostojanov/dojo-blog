@@ -21,6 +21,7 @@
 
 <script>
 import { ref } from '@vue/reactivity'
+import { useRouter } from 'vue-router'
 import createPost from '../composables/createPost'
 export default {
   setup() {
@@ -28,6 +29,8 @@ export default {
     const body = ref('')
     const tag = ref('')
     const tags = ref([])
+    
+    const router = useRouter();
     
     const handleKeydown = () => {
       if (!tags.value.includes(tag.value)) {
@@ -45,7 +48,8 @@ export default {
       }
       
       const { submit } = createPost(post)
-      submit().then(this.$router.push('/'))
+      await submit()
+      router.push({ name: 'home' })
     }
     
     return { title, body, tag, tags, handleKeydown, handleSubmit }

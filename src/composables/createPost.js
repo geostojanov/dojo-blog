@@ -1,7 +1,6 @@
 import { ref } from "vue"
 
 const createPost = (post) => {
-  
   const submit = async () => {
     try {
       await fetch('http://localhost:3000/posts', {
@@ -9,6 +8,7 @@ const createPost = (post) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(post) 
       })
+      // router.push({ name: 'home' })
     }
     catch (err) {
       console.log(err.value)
