@@ -1,14 +1,10 @@
 import { ref } from "vue"
+import { projectFirestore } from "@/firebase/config"
 
 const createPost = (post) => {
   const submit = async () => {
     try {
-      await fetch('http://localhost:3000/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(post) 
-      })
-      // router.push({ name: 'home' })
+      const res = await projectFirestore.collection('posts').add(post)
     }
     catch (err) {
       console.log(err.value)
